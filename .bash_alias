@@ -15,6 +15,9 @@ alias dscleanup="find . -type f -name '*.DS_Store' -ls -delete"
 # Finally, clear download history from quarantine. https://mths.be/bum
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend" # Lock the screen
+alias reload="exec $SHELL -l" # Reload the shell (i.e. invoke as a login shell)
+
 # Easier navigation
 alias ..="cd .."
 alias ...="cd ../.."
@@ -73,5 +76,3 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 alias hosts='sudo nano /etc/hosts' # vhosts
 alias untar='tar xvf' # untar
 
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend" # Lock the screen
-alias reload="exec $SHELL -l" # Reload the shell (i.e. invoke as a login shell)
