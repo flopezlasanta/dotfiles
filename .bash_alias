@@ -28,7 +28,8 @@ alias -- -="cd -"
 
 # Shortcuts
 alias dl="cd ~/Downloads"
-alias do="cd ~/devops"
+alias devops="cd ~/devops" # where the code is
+alias devenv="cd ~/devenv" # where the tools are
 alias g="git"
 alias h="history"
 
