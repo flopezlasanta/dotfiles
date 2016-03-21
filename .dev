@@ -1,0 +1,20 @@
+# ssh keys
+eval 'ssh-agent -s' 
+ssh-add ~/.ssh/github
+ssh-add ~/.ssh/digitalocean
+
+# Java environment
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# Scala & Spark environment
+alias scala-shell="scala -i /Users/teraflopx/devenv/scala-repl"
+export SPARK_HOME='/usr/local/Cellar/apache-spark/1.6.0/libexec/'
+
+# Python
+export PYTHONPATH=$SPARK_HOME/python/:$PYTHONPATH
+export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.9-src.zip:$PYTHONPATH
+
+# MongoDB
+alias mongo-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist"
+alias mongo-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist"
