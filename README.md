@@ -1,39 +1,12 @@
-# Teraflopx's dotfiles
-My dotfiles
+# Dotfiles
+Here are the dotfiles I have for my iMac, fully inspired by the work from others (see below).
 
-## Installation
+## Contents
 
-To install from scratch:
+- [.bash_profiles](https://github.com/teraflopx/dotfiles/blob/master/.bash_profile) loads dotfiles and sets some shell options
 
-```bash
-cd ~
-git clone https://github.com/teraflopx/dotfiles.git && cd dotfiles && source bootstrap.sh
-```
-
-To update:
-
-```bash
-cd ~/dotfiles
-git pull
-source bootstrap.sh
-```
-
-To update avoiding the confirmation prompt:
-
-```bash
-cd ~/dotfiles
-git pull
-set -- -f; source bootstrap.sh
-```
-
-### Install Homebrew formulae
-
-After installing [Homebrew](http://brew.sh/) run the following:
-
-```bash
-cd ~/dotfiles
-./brew.sh
-```
+### TODO
+* Extend .bash_profile so that ~/.path can be used to extend `$PATH`; ~/.extra can be used for other settings not to commit
 
 ## Thanks to…
 
