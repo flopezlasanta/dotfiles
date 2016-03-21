@@ -2,6 +2,7 @@
 
 # Common Aliases
 alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias dim="docker images"
 alias dex="docker exec -i -t"
 alias dpa="docker ps -a"
 alias denv="env | grep DOCKER_"
