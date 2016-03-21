@@ -1,6 +1,6 @@
-# Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
+#!/bin/bash
+
+# Load the shell dotfiles
 for file in ~/.{prompt,dev,alias,docker}; do
 	[[ -r "$file" ]] && [[ -f "$file" ]] && source "$file"
 done
