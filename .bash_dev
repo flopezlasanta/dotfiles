@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # ssh keys
-eval 'ssh-agent -s' 
-ssh-add ~/.ssh/github
-ssh-add ~/.ssh/digitalocean
+{ eval 'ssh-agent -s'; ssh-add ~/.ssh/github; ssh-add ~/.ssh/digitalocean; } &>/dev/null
 
 # Java environment
 export PATH="$HOME/.jenv/bin:$PATH"
