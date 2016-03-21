@@ -20,3 +20,30 @@ dcleanup(){
 	docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
 	docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
 }
+
+# Common / useful Docker containers (NOT WORKING IN OS X)
+speedtest() { # Speed test network connection
+	docker run --name speedtext --net host --rm tianon/speedtest
+}
+lynx() { # Text-based web browser
+	docker run --name lynx -it jess/lynx
+} 
+cathode() { # Old style terminal app
+	docker run --name cathode -it \
+	-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY \
+	jess/1995
+} 
+tor() { # Tor web browser
+	docker run --name tor -it \
+	-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY \
+	-v /dev/snd:/dev/snd \
+	--privileged jess/tor-browser
+}
+chrome() { # Chrome web browser
+	docker run --name chrome -it \
+	--net host --cpuset 0 --memory 512mb \
+	-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY \	
+	-v $HOME/Downloads:/root/Downloads -v $HOME/.config/google-chrome/:/data \
+	-v /dev/snd:/dev/snd \
+	--privileged jess/chrome
+}
