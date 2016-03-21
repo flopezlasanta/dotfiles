@@ -8,7 +8,7 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 # Scala & Spark environment
-alias scala-shell="scala -i /Users/teraflopx/devenv/scala-repl"
+alias scala-shell="scala -i ~/devenv/scala-repl"
 export SPARK_HOME='/usr/local/Cellar/apache-spark/1.6.0/libexec/'
 
 # Python
