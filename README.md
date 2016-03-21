@@ -12,7 +12,8 @@ In order:
 - [.bash_docker](https://github.com/teraflopx/dotfiles/blob/master/.bash_docker) adds aliases and functions for [Docker](https://www.docker.com/)
 
 ### TODO
-* [ ] Extend .bash_profile to have `~/.path` for extending `$PATH` and `~/.extra` for other personal settings _(e.g. Git credentials)_
+* [ ] Update `.bash_profile` to have `~/.path` for extending `$PATH`
+* [ ] Update `.bash_profile` to have `~/.extra` for personal settings _(e.g. Git credentials)_
 * [ ] Add dotfile for [Homebrew](http://brew.sh/) formulae _(note: this should not be called by `.bash_profile`)_
 * [ ] Add dotfile for recipes with common Docker containers _(e.g. Chrome, Tor, ...)_
 * [ ] Add dotfile for OS X customization
