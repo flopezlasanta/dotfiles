@@ -9,10 +9,10 @@ alias dips="docker ps -q | xargs docker inspect --format '{{ .NetworkSettings.IP
 alias dstop='docker stop $(docker ps -a -q)'
 
 # Docker Machine
-function dm-env() {
+function dme() {
   eval "$(docker-machine env "${1:-default}")"
 }
-alias dm-list="docker-machine ls"
+alias dml="docker-machine ls"
 
 # Helper Functions
 dcleanup(){
