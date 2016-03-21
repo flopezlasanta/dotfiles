@@ -16,6 +16,7 @@ In order:
 * [ ] Add dotfile for [Homebrew](http://brew.sh/) formulae
 * [ ] Add dotfile for recipes with common Docker containers (e.g. Chrome, Tor, ...)
 * [ ] Add dotfile for OS X customization
+* [ ] Add symbolic links (e.g. for [SublimeText 3](https://www.sublimetext.com/3))
 
 ## Thanks to…
 
