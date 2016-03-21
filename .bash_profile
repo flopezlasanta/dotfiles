@@ -1,18 +1,17 @@
 #!/bin/bash
 
 # Load the shell dotfiles
-for file in ~/.{prompt,dev,alias,docker}; do
+for file in ~/.bash_{prompt,dev,alias,docker}; do
 	[[ -r "$file" ]] && [[ -f "$file" ]] && source "$file"
 done
 unset file
 
+# Shell options
 shopt -s nocaseglob # Case-insensitive globbing (used in pathname expansion)
 shopt -s histappend # Append to the Bash history file, rather than overwriting it
 shopt -s cdspell # Autocorrect typos in path names when using `cd`
 
-# Enable some Bash 4 features when possible:
-# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
-# * Recursive globbing, e.g. `echo **/*.txt`
+# Enable some Bash 4 features when possible
 for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null
 done
