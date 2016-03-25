@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# good references:
+# - https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/
+# - http://sourabhbajaj.com/mac-setup/Homebrew/README.html
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -32,12 +36,12 @@ brew install python
 brew install python3
 brew install maven
 brew install gradle
-brew install node
-brew install octave
-brew install jenv
+brew install node # Node JS
+brew install jenv # Java
 brew install scala
-brew install sbt
+brew install sbt # Scala Build Tool
 brew install typesafe-activator
+brew install jq # command-line JSON processor
 
 # Cloud and Big Data
 brew install apache-spark
@@ -47,13 +51,15 @@ brew install cloudfoundry-cli
 # Science
 brew tap homebrew/science
 brew install r
+brew install octave
 # ...
 
 # System
 brew install tree
 brew install findutils # find, locate, xargs...
-brew install dark-mode
+brew install dark-mode # toggle OS X dark-mode
 brew install figlet # text to ASCII art converter
+brew install socat # netcat on steroids
 
 # Completion
 brew tap homebrew/completions
