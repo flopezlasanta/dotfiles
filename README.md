@@ -17,7 +17,7 @@ In order:
 * [ ] Add dotfile for [Homebrew](http://brew.sh/) formulae _(note: this should not be called by `.bash_profile`)_
 * [ ] Add dotfile for recipes with common Docker containers _(e.g. Chrome, Tor, ...)_
 * [ ] Add dotfile for OS X customization
-* [ ] Add symbolic links _(e.g. for [SublimeText 3](https://www.sublimetext.com/3))_
+* [ ] Add installation and symlinks for base tools _(e.g. [Homebrew](http://brew.sh/) and [SublimeText 3](https://www.sublimetext.com/3))_
 * [ ] Update `.bash_docker` to fix containers with GUI running in OS X _(thanks to xQuartz, socat...)_
 * [ ] Update `.bash_docker` with examples from (DockerCon Barcelona 2015)[http://europe-2015.dockercon.com/]
 
