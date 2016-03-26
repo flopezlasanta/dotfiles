@@ -48,6 +48,8 @@ brew install apache-spark
 brew install storm
 brew tap pivotal/tap # required for...
 brew install cloudfoundry-cli
+brew install heroku-toolbelt
+brew install awscli
 
 # Science
 brew tap homebrew/science
@@ -56,6 +58,7 @@ brew install octave
 # ...
 
 # System and Network
+brew install archey # display Mac specs
 brew install tree
 brew install findutils # find, locate, xargs...
 brew install dark-mode # toggle OS X dark-mode
@@ -65,6 +68,7 @@ brew install openssl
 brew install openvpn
 brew install nmap # port scanning utility
 brew install ngrep # network grep
+brew install htop # interactive process viewer
 
 # Completion
 brew tap homebrew/completions
