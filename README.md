@@ -11,6 +11,9 @@ In order:
 - [.bash_alias](https://github.com/teraflopx/dotfiles/blob/master/.bash_alias) adds aliases and functions for general needs
 - [.bash_docker](https://github.com/teraflopx/dotfiles/blob/master/.bash_docker) adds aliases and functions for [Docker](https://www.docker.com/)
 
+Other:
+- [.bash_brew](https://github.com/teraflopx/dotfiles/blob/master/.bash_brew) installs [Homebrew](http://brew.sh/) formulae 
+
 ### TODO
 * [ ] Update `.bash_profile` to have `~/.path` for extending `$PATH`
 * [ ] Update `.bash_profile` to have `~/.extra` for personal settings _(e.g. Git credentials)_
