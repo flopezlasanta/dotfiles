@@ -4,6 +4,9 @@
 # - https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/
 # - http://sourabhbajaj.com/mac-setup/Homebrew/README.html
 
+# a script to list brew dependencies:
+#brew list | while read cask; do echo -n "$(tput setaf 4) $cask -> $(tput sgr0)"; brew deps $cask | awk '{printf(" %s ", $0)}'; echo ""; done
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -13,17 +16,12 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 brew update # Make sure we’re using the latest Homebrew
 brew upgrade --all # Upgrade any already-installed formulae
 
-# Brew
-brew tap caskroom/cask # note: as of December 2015, cask comes installed with Homebrew directly
-brew tap pivotal/tap # ?
-
 # Docker
 brew install boot2docker
 brew install docker
 brew install docker-machine
 brew install docker-compose
 brew install docker-swarm
-brew install fig
 
 # Databases
 brew install mysql
@@ -33,6 +31,7 @@ brew install redis
 
 # Development
 brew install git
+brew tap homebrew/dupes # duplicates software provided by OS X, required for python, python3...
 brew install python
 brew install python3
 brew install maven
@@ -47,6 +46,7 @@ brew install jq # command-line JSON processor
 # Cloud and Big Data
 brew install apache-spark
 brew install storm
+brew tap pivotal/tap # required for...
 brew install cloudfoundry-cli
 
 # Science
