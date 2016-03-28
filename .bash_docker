@@ -14,6 +14,7 @@ function dme() {
   eval "$(docker-machine env "${1:-default}")"
 }
 alias dml="docker-machine ls"
+alias dms="docker-machine start $1"
 
 # Helper Functions
 dcleanup(){
