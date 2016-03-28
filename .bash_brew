@@ -37,19 +37,25 @@ brew install python3
 brew install maven
 brew install gradle
 brew install node # Node JS
-brew install jenv # Java
+brew cask install java 
+brew install jenv # Java Environment
 brew install scala
 brew install sbt # Scala Build Tool
 brew install typesafe-activator
 brew install jq # command-line JSON processor
 
-# Cloud and Big Data
-brew install apache-spark
-brew install storm
-brew tap pivotal/tap # required for...
+# Virtualization and Cloud
+brew cask install virtualbox
+brew cask install vagrant
+brew cask install vagrant-manager
+brew tap pivotal/tap # required for cloudfoundry-cli
 brew install cloudfoundry-cli
 brew install heroku-toolbelt
 brew install awscli
+
+# Big Data
+brew install apache-spark
+brew install storm
 
 # Science
 brew tap homebrew/science
@@ -69,6 +75,7 @@ brew install openvpn
 brew install nmap # port scanning utility
 brew install ngrep # network grep
 brew install htop # interactive process viewer
+brew cask install xquartz # x11
 
 # Completion
 brew tap homebrew/completions
