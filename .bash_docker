@@ -10,11 +10,12 @@ alias dips="docker ps -q | xargs docker inspect --format '{{ .NetworkSettings.IP
 alias dstop='docker stop $(docker ps -a -q)'
 
 # Docker Machine
-function dme() {
+function dmenv() {
   eval "$(docker-machine env "${1:-default}")"
 }
-alias dml="docker-machine ls"
-alias dms="docker-machine start $1"
+alias dmls="docker-machine ls"
+alias dmstart="docker-machine start $1"
+alias dmstop="docker-machine stop $1"
 
 # Helper Functions
 dcleanup(){
@@ -22,8 +23,50 @@ dcleanup(){
 	docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
 }
 
+# Common / useful Docker containers
+speedtest() { # Speed test network connection
+	docker run --name speedtext --rm --net host tianon/speedtest
+}
+lynx() { # Text-based web browser
+	docker run --name lynx --rm -it jess/lynx
+} 
+
+# see http://blog.bennycornelissen.nl/bwc-gui-apps-in-docker-on-osx/
+if [ $(which docker-machine) ]; then
+	export DOCKER_MACHINE=$(docker-machine active)
+
+	dminit() {
+        docker-machine start ${DOCKER_MACHINE}
+        dmshell
+	}
+
+	dmshell() {
+        eval $(docker-machine env ${DOCKER_MACHINE})
+	}
+
+	docker_if_not_running() {
+        if [ $(docker-machine status ${DOCKER_MACHINE}) != 'Running' ]; then
+			dminit
+        fi
+	}
+
+	dmhosts() {
+        DMHOSTNAME="dockerhost"
+
+        sudo -v
+
+        grep ${DMHOSTNAME} /etc/hosts > /dev/null && sudo sed -i '' "/${DMHOSTNAME}/d" /etc/hosts
+        sudo echo "$(docker-machine ip ${DOCKER_MACHINE}) ${DMHOSTNAME}" | sudo tee -a /etc/hosts
+	}
+
+	if [ $(docker-machine status ${DOCKER_MACHINE}) == 'Running' ]; then
+        dmshell &> /dev/null
+	fi
+
+fi # end docker-machine
+
 # xQuartz (required for running Dockers with GUI in OS X, together with socat)
-xquartz() {
+xquartz_if_not_running() {
 	v_nolisten_tcp=$(defaults read org.macosforge.xquartz.X11 nolisten_tcp)
 	v_xquartz_app=$(defaults read org.macosforge.xquartz.X11 app_to_run)
 
@@ -41,30 +84,43 @@ xquartz() {
 	done
 	export DISPLAY=:0
 }
+close_xquartz() {
+	osascript -e 'quit app "xQuartz"'
+}
+
+firefox() {
+    xquartz_if_not_running
+    docker_if_not_running
+    xhost +$(docker-machine ip ${DOCKER_MACHINE})
+
+    docker run --name firefox --rm \
+    	--memory 512mb --net host --security-opt seccomp:unconfined \
+    	-e DISPLAY=$(docker-machine inspect ${DOCKER_MACHINE} --format={{.Driver.HostOnlyCIDR}} | cut -d'/' -f1):0 \
+    	jess/firefox
     
-# Common / useful Docker containers (NOT WORKING IN OS X)
-speedtest() { # Speed test network connection
-	docker run --name speedtext --net host --rm tianon/speedtest
+    close_xquartz
 }
-lynx() { # Text-based web browser
-	docker run --name lynx -it jess/lynx
-} 
-cathode() { # Old style terminal app
-	docker run --name cathode -it \
-	-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY \
-	jess/1995
-} 
-tor() { # Tor web browser
-	docker run --name tor -it \
-	-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY \
-	-v /dev/snd:/dev/snd \
-	--privileged jess/tor-browser
+tor() {
+    xquartz_if_not_running
+    docker_if_not_running
+    xhost +$(docker-machine ip ${DOCKER_MACHINE})
+
+    docker run --name tor --rm \
+    	--privileged \
+    	-e DISPLAY=$(docker-machine inspect ${DOCKER_MACHINE} --format={{.Driver.HostOnlyCIDR}} | cut -d'/' -f1):0 \
+    	jess/tor-browser
+
+    close_xquartz
 }
-chrome() { # Chrome web browser
-	docker run --name chrome -it \
-	--net host --cpuset 0 --memory 512mb \
-	-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY \	
-	-v $HOME/Downloads:/root/Downloads -v $HOME/.config/google-chrome/:/data \
-	-v /dev/snd:/dev/snd \
-	--privileged jess/chrome
+chrome() {
+	xquartz_if_not_running
+    docker_if_not_running
+    xhost +$(docker-machine ip ${DOCKER_MACHINE})
+
+    docker run --name chrome --rm \
+    	--memory 512mb --net host --security-opt seccomp:unconfined \
+        -e DISPLAY=$(docker-machine inspect ${DOCKER_MACHINE} --format={{.Driver.HostOnlyCIDR}} | cut -d'/' -f1):0 \
+        jess/chrome
+
+    close_xquartz
 }
