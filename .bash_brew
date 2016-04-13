@@ -76,6 +76,7 @@ brew install nmap # port scanning utility
 brew install ngrep # network grep
 brew install htop # interactive process viewer
 brew cask install xquartz # x11
+brew cask install keybase # public key crypto
 
 # Completion
 brew tap homebrew/completions
