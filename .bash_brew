@@ -24,10 +24,11 @@ brew install docker-compose
 brew install docker-swarm
 
 # Databases
-brew install mysql
-brew install sqllite
-brew install mongodb
-brew install redis
+brew install mysql # relational
+brew install sqllite # relational
+brew install mongodb # document-oriented
+brew install redis # in-memory key-value
+brew install neo4j # graph
 
 # Development
 brew install git
