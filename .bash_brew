@@ -27,6 +27,7 @@ brew install docker-swarm
 brew install mysql # relational
 brew install sqllite # relational
 brew install mongodb # document-oriented
+brew install Caskroom/cask/robomongo # https://robomongo.org/
 brew install redis # in-memory key-value
 brew install neo4j # graph
 
