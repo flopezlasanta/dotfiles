@@ -67,7 +67,7 @@ brew install octave
 
 # System and Network
 brew install archey # display Mac specs
-brew install tree
+brew install tree # display current folder tree structure
 brew install findutils # find, locate, xargs...
 brew install dark-mode # toggle OS X dark-mode
 brew install figlet # text to ASCII art converter
@@ -79,6 +79,13 @@ brew install ngrep # network grep
 brew install htop # interactive process viewer
 brew cask install xquartz # x11
 brew cask install keybase # public key crypto
+#brew install homebrew/gui/terminator # not working fine with OS X
+brew install httpie # standalone HTTP client e.g. http www.google.com
+#brew install coreutils # GNU coreutils contains the most essential UNIX commands, such as ls, cat...
+brew install moreutils # see https://joeyh.name/code/moreutils/
+brew install fortune cowsay # just for fun
+#brew install fish # see https://hackercodex.com/guide/install-fish-shell-mac-ubuntu/
+brew install Caskroom/cask/iterm2 # an alternative to the default terminal, see https://www.iterm2.com/index.html
 
 # Completion
 brew tap homebrew/completions
