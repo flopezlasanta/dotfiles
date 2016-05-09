@@ -51,9 +51,10 @@ brew cask install virtualbox
 brew cask install vagrant
 brew cask install vagrant-manager
 brew tap pivotal/tap # required for cloudfoundry-cli
-brew install cloudfoundry-cli
-brew install heroku-toolbelt
-brew install awscli
+brew install cloudfoundry-cli # Cloud Foundry
+brew install heroku-toolbelt # Heroku
+brew install awscli # Amazon AWS
+brew install doctl # Digital Ocean
 
 # Big Data
 brew install apache-spark
