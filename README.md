@@ -22,6 +22,8 @@ Other:
 * [ ] Add dotfile for OS X customization
 * [ ] Add installation and symlinks for base tools _(e.g. [Homebrew](http://brew.sh/) and [SublimeText 3](https://www.sublimetext.com/3))_
 * [x] Update `.bash_docker` to fix containers with GUI running in OS X _(using xQuartz...)_
+* [ ] Install [Ensime](http://ensime.github.io/) and integrate with SublimeText3
+* [ ] Install [Scalariform](http://scala-ide.org/scalariform/) via Homebrew and integrated with Ensime
 * [ ] Update `.bash_docker` with examples from [DockerCon Barcelona 2015](http://europe-2015.dockercon.com/)
 
 ## Thanks to…
