@@ -87,6 +87,7 @@ brew install moreutils # see https://joeyh.name/code/moreutils/
 brew install fortune cowsay # just for fun
 #brew install fish # see https://hackercodex.com/guide/install-fish-shell-mac-ubuntu/
 brew install Caskroom/cask/iterm2 # an alternative to the default terminal, see https://www.iterm2.com/index.html
+brew install asciinema # utility for terminal session recording, see https://asciinema.org/
 
 # Completion
 brew tap homebrew/completions
