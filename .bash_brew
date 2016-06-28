@@ -39,12 +39,13 @@ brew install python3
 brew install maven
 brew install gradle
 brew install node # Node JS
-brew cask install java 
-brew install jenv # Java Environment
-brew install scala
+brew cask install java # Java
+brew install jenv # Java Environment (same as Ruby environment)
+brew install scala # Scala
 brew install sbt # Scala Build Tool
-brew install typesafe-activator
+brew install typesafe-activator # Scala Activator
 brew install jq # command-line JSON processor
+brew install rbenv # Ruby environment (after this install Ruby 2.2.1 and make it global)
 
 # Virtualization and Cloud
 brew cask install virtualbox
