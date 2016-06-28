@@ -15,6 +15,10 @@ export SPARK_HOME='/usr/local/Cellar/apache-spark/1.6.0/libexec/'
 export PYTHONPATH=$SPARK_HOME/python/:$PYTHONPATH
 export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.9-src.zip:$PYTHONPATH
 
+# Ruby environment
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # MongoDB
 alias mongo-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist"
 alias mongo-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist"
