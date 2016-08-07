@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# good references:
+# some references:
 # - https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/
 # - http://sourabhbajaj.com/mac-setup/Homebrew/README.html
+# - http://pedrorijo.com/blog/mac-and-brew/
 
 # a script to list brew dependencies:
 #brew list | while read cask; do echo -n "$(tput setaf 4) $cask -> $(tput sgr0)"; brew deps $cask | awk '{printf(" %s ", $0)}'; echo ""; done
@@ -12,6 +13,14 @@ sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until the script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# Xcode command line tools
+xcode-select --install;
+
+# install brew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
+brew install caskroom/cask/brew-cask;
+brew tap caskroom/versions;
 
 brew update # Make sure we’re using the latest Homebrew
 brew upgrade --all # Upgrade any already-installed formulae
@@ -46,6 +55,12 @@ brew install sbt # Scala Build Tool
 brew install typesafe-activator # Scala Activator
 brew install jq # command-line JSON processor
 brew install rbenv # Ruby environment (after this install Ruby 2.2.1 and make it global)
+
+# IDEs
+brew cask install intellij-idea
+brew cask install sublime-text3
+#brew cask install eclipse-ide
+#brew cask install atom
 
 # Virtualization and Cloud
 brew cask install virtualbox
