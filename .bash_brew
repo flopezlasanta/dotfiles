@@ -57,7 +57,7 @@ brew install jq # command-line JSON processor
 brew install rbenv # Ruby environment (after this install Ruby 2.2.1 and make it global)
 
 # IDEs
-brew cask install intellij-idea
+brew cask install intellij-idea-ce # community edition
 brew cask install sublime-text3
 #brew cask install eclipse-ide
 #brew cask install atom
