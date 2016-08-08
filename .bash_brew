@@ -87,6 +87,7 @@ brew install archey # display Mac specs
 brew install tree # display current folder tree structure
 brew install findutils # find, locate, xargs...
 brew install dark-mode # toggle OS X dark-mode
+brew install brigthness # change display brightness
 brew install figlet # text to ASCII art converter
 brew install socat # netcat on steroids
 brew install openssl
