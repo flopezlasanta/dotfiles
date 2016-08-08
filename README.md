@@ -20,7 +20,7 @@ Other:
 * [x] Add dotfile for [Homebrew](http://brew.sh/) formulae _(note: this should not be called by `.bash_profile`)_
 * [x] Add dotfile for recipes with common Docker containers _(e.g. Chrome, Tor, ...)_
 * [ ] Add dotfile for OS X customization
-* [ ] Add installation and symlinks for base tools _(e.g. [Homebrew](http://brew.sh/) and [SublimeText 3](https://www.sublimetext.com/3))_
+* [x] Add installation and symlinks for base tools _(e.g. [Homebrew](http://brew.sh/) and [SublimeText 3](https://www.sublimetext.com/3))_: addressed in [.bash_brew](https://github.com/teraflopx/dotfiles/blob/master/.bash_brew)
 * [x] Update `.bash_docker` to fix containers with GUI running in OS X _(using xQuartz...)_
 * [ ] Install [Ensime](http://ensime.github.io/) and integrate with SublimeText3
 * [ ] Install [Scalariform](http://scala-ide.org/scalariform/) via Homebrew and integrated with Ensime
