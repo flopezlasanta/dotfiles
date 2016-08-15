@@ -19,8 +19,11 @@ xcode-select --install;
 
 # install brew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
-brew install caskroom/cask/brew-cask;
-brew tap caskroom/versions;
+brew tap caskroom/cask
+brew tap caskroom/versions
+
+# Brew environment (since .bash_brew is not called by .bash_profile I had to duplicate this setting there)
+export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
 
 brew update # Make sure we’re using the latest Homebrew
 brew upgrade --all # Upgrade any already-installed formulae
