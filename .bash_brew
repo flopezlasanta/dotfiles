@@ -99,6 +99,7 @@ brew install openvpn
 brew install nmap # port scanning utility
 brew install ngrep # network grep
 brew install htop # interactive process viewer
+brew cask install caffeine
 brew cask install xquartz # x11
 brew cask install keybase # public key crypto
 #brew install homebrew/gui/terminator # not working fine with OS X
