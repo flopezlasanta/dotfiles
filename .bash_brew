@@ -108,7 +108,7 @@ brew install httpie # standalone HTTP client e.g. http www.google.com
 brew install moreutils # see https://joeyh.name/code/moreutils/
 brew install fortune cowsay # just for fun
 #brew install fish # see https://hackercodex.com/guide/install-fish-shell-mac-ubuntu/
-brew install Caskroom/cask/iterm2 # an alternative to the default terminal, see https://www.iterm2.com/index.html
+brew cask install iterm2 # an alternative to the default terminal, see https://www.iterm2.com/index.html
 brew install asciinema # utility for terminal session recording, see https://asciinema.org/
 brew tap homebrew/services # to integrate Homebrew with launchctl manager (i.e. to start redis or mysql at login)
 
