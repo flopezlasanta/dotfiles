@@ -28,5 +28,6 @@ Other:
 
 ## Thanks to…
 
+* [Github Dotfiles!](https://dotfiles.github.io/)
 * [Jess Frazelle](https://github.com/jfrazelle/dotfiles/)
 * [Mathias Bynens](https://github.com/mathiasbynens/dotfiles/)
