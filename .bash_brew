@@ -50,6 +50,7 @@ brew tap homebrew/dupes # duplicates software provided by OS X, required for pyt
 brew install python
 brew install python3
 brew install pyenv
+brew install pyenv-virtualenv
 brew install maven
 brew install gradle
 brew install node # Node JS
